@@ -3,7 +3,7 @@ const {signUp,login,updatePassword} =require("../controller/userController");
 const userModel = require("../model/userModel");
 userRouter=express.Router();
 
-userRouter.post("/create",signUp);
+userRouter.post("/signUp",signUp);
 userRouter.post("/login",login);
 
 userRouter.patch("/updatePassword",updatePassword);
