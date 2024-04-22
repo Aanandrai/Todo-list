@@ -46,7 +46,7 @@ exports.signUp= async(req,res)=>{
 
         return res.json({
             success:true,
-            message:"user register successful"
+            message:"user register successfully"
         })
 
     }

@@ -10,7 +10,7 @@ const todoSchema=new mongoose.Schema({
     status:{
         type:String,
         enum:["complete","inProgress","pending"],
-        default:pending
+        default:"pending"
     },
 
     tasks:[{
@@ -19,7 +19,7 @@ const todoSchema=new mongoose.Schema({
     }],
 
     user:{
-        type:mongoose.Schema.objectId,
+        type:mongoose.Schema.ObjectId,
         ref:"userModel",
         require:true
     }
