@@ -1,5 +1,5 @@
 const todoModel=require("../model/todoModel");
-
+const userModel=require("../model/userModel")
 exports.getUserAllTodo=async(req,res)=>{
     try{
         const id=req.user.id;
@@ -34,6 +34,9 @@ exports.createTodo=async (req,res)=>{
         const data=await todoModel.create({
             todoTitle,user:id
         })
+
+        const newUser=await userModel.findByIdAndUpdate(id, {$push :{todo:data._id}},{new:true});
+
 
         return res.json({
             success:true,
