@@ -4,7 +4,7 @@ const jwt=require("jsonwebtoken");
 
 
 // signUp controller 
-exports.signUp= async(req,res)=>{
+exports.signUp= async(req , res)=>{
 
     try{
         const {userName, email, password ,confirmPassword}=req.body;
@@ -23,7 +23,7 @@ exports.signUp= async(req,res)=>{
             });
         }
 
-        const oldUser=await userModel.findOne({email:email});
+        const oldUser=await userModel.findOne({email});
 
         if(oldUser){
             return res.json({
