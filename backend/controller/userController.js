@@ -1,5 +1,5 @@
 const userModel=require("../model/userModel");
-const bcrypt=require("bcrypt");
+const bcrypt=require("bcrypt"); 
 const jwt=require("jsonwebtoken");
 
 

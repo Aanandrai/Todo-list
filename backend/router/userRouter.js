@@ -6,7 +6,7 @@ userRouter=express.Router();
 
 userRouter.post("/signUp",signUp);
 userRouter.post("/login",login);
-
+ 
 userRouter.patch("/updatePassword",auth ,updatePassword);
 module.exports=userRouter;
 

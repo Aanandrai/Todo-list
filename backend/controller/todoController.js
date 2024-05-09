@@ -1,4 +1,4 @@
-const todoModel=require("../model/todoModel");
+const todoModel=require("../model/todoModel"); 
 const userModel=require("../model/userModel")
 exports.getUserAllTodo=async(req,res)=>{
     try{
