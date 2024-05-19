@@ -3,23 +3,22 @@ const mongoose=require("mongoose");
 const taskSchema=new mongoose.Schema({
     title:{
         type:String,
-        require:true
+        required:true
     },
 
     description:{
         type:String,
     },
 
-    status:{
-        type:String,
-        enum:["complete","inProgress", "pending"],
-        default:"pending"
+    complete:{
+     type:Boolean,
+     default:false
     },
 
     todo:{
         type:mongoose.Schema.ObjectId,
         ref:"todoModel",
-        require:true
+        required:true
     }
 });
 
