@@ -4,22 +4,21 @@ const todoSchema=new mongoose.Schema({
 
     todoTitle:{
         type:String,
-        require:true
+        required:true
     },
 
-    status:{
-        type:String,
-        enum:["complete","inProgress","pending"],
-        default:"pending"
+    complete:{
+        type:Boolean,
+        default:false
     },
 
     tasks:[{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"taskModel",
     }],
 
     user:{
-        type:mongoose.Schema.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"userModel",
         require:true
     }
