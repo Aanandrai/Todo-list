@@ -4,6 +4,7 @@ import "./Signin.css";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 
+
 // eslint-disable-next-line react/prop-types
 const SignIn = ({ setIsLoggedin }) => {
   const navigate = useNavigate();
@@ -30,12 +31,20 @@ const SignIn = ({ setIsLoggedin }) => {
   //   navigate("/");
   // }
 
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:4000/user/Signin", formData)
+      .post("http://localhost:4000/user/Signin", formData,{ withCredentials: true })
       .then((response) => {
         if (response.data.success === true) {
+          const token = getCookie('token');
+          console.log(token);
           setIsLoggedin(true);
           // onLogin(response.data.user); // Pass user data to the parent component
           toast.success("Signed");

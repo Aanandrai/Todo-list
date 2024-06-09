@@ -27,11 +27,11 @@ const Signup = () => {
   }
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     axios
-      .post("http://localhost:4000/user/Signup", {
-        userdata,
-      })
+      .post("http://localhost:4000/user/Signup",
+        userdata)
       .then((response) => {
         if (response.data.success == true) {
           console.log(response.data.message);
