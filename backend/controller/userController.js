@@ -18,7 +18,7 @@ exports.SignUp = async (req, res) => {
     ) {
       return res.json({
         success: false,
-        message: "Please fill in all fields",
+        message: "Please fill in all field",
       });
     }
 
